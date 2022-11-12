@@ -7,6 +7,14 @@ html {
   scroll-behavior: smooth;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 /* start global rules */
 :root {
   --bs-indigo: #6610f2;
@@ -54,11 +62,34 @@ ul {
   list-style: none;
 }
 
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  /* background-color: black; */
+}
+
+ul {
+  list-style: none;
+}
+
 .container {
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+  /* max-height: 97vh; */
 }
 
 /* Small */
@@ -82,11 +113,7 @@ ul {
   }
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* End Global Rules */
 
 a {
   text-decoration: none;
@@ -222,8 +249,27 @@ a {
   z-index: 9999999999999999;
 }
 
+@media (max-width:768px) {
+  .landing header {
+    justify-content: center;
+    padding: 0;
+    background-color: var(--main-color);
+    opacity: 0.7;
+  }
+}
+
 .landing header i {
   display: none;
+}
+
+@media (max-width:768px) {
+  .landing header i {
+    display: initial;
+    margin-left: 10px;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+  }
 }
 
 .landing header .logo a {
@@ -232,6 +278,20 @@ a {
   transition: 0.3s;
   z-index: 99999999;
 }
+
+@media (max-width:768px) {
+  .landing header .logo a {
+    font-size: 40px;
+  }
+}
+
+@media (max-width:768px) {
+  .landing header .logo {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
 
 .landing header .logo a:hover {
   color: #ffffffad;
@@ -252,7 +312,6 @@ header .fa-x {
 
 @media(max-width:786px) {
   .landing header ul {
-    /* display: none; */
     width: 100%;
     padding: 7px;
     text-align: center;
@@ -268,7 +327,6 @@ header .fa-x {
     transition: 0.3s;
   }
 
-
   .landing header ul li {
     padding: 10px 0;
     width: fit-content;
@@ -282,31 +340,6 @@ header .fa-x {
   .landing header .spec {
     height: 240px;
     opacity: 1;
-  }
-
-  .landing header i {
-    display: initial;
-    margin-left: 10px;
-    cursor: pointer;
-    position: absolute;
-    right: 30px;
-  }
-
-  .landing header {
-    justify-content: center;
-    padding: 0;
-    background-color: var(--main-color);
-    opacity: 0.7;
-  }
-
-  .landing header .logo {
-    margin-top: 10px;
-    text-align: center;
-  }
-
-  .landing header .logo a {
-    font-size: 40px;
-
   }
 }
 
@@ -337,6 +370,14 @@ header .fa-x {
 
 .landing .interface h1 {
   margin-bottom: 50px;
+}
+
+@media (max-width:768px) {
+  .landing .interface h1 {
+    max-width: 430px;
+    font-size: 25px;
+    line-height: 1.5;
+  }
 }
 
 .landing .interface h1 span {
@@ -510,14 +551,14 @@ header .fa-x {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
   align-items: center;
+  flex-direction: column;
 }
 
 
 .contact .container .contact-content .box {
   margin: 10px auto;
-  width: calc(50% - 10px);
+  width: 100%;
   border-color: var(--main-color);
   border-style: solid;
   border-width: 1px;
@@ -547,31 +588,16 @@ header .fa-x {
 .contact .container .contact-content .box p a,
 .contact .container .contact-content .box p span {
   color: var(--main-color);
-  font-size: 19px;
+  font-size: 25px;
+  margin-left: 20px;
 }
 
-@media(max-width:950px) {
-  .contact .container .contact-content {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-  }
+@media (max-width:768px) {
 
-  .contact .container .contact-content .box {
-    width: 100%;
-  }
-
-  .contact .container .contact-content .box i {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-  }
-
-
-  .contact .container .contact-content .box p,
   .contact .container .contact-content .box p a,
   .contact .container .contact-content .box p span {
-    font-size: 10px;
+    font-size: 14px;
+    margin-left: 0;
   }
 }
 
